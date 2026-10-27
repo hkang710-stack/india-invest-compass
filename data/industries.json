@@ -1,0 +1,10 @@
+{
+  "industries": [
+    { "id": "auto", "label": "자동차", "suggested": ["port", "korean", "incentive"] },
+    { "id": "electronics", "label": "전자·반도체", "suggested": ["incentive", "korean", "port"] },
+    { "id": "chemical", "label": "화학", "suggested": ["port", "incentive"] },
+    { "id": "textile", "label": "섬유", "suggested": ["laborCost", "port"] },
+    { "id": "it", "label": "IT", "suggested": ["finance", "incentive"] },
+    { "id": "finance", "label": "금융", "suggested": ["finance", "korean"] }
+  ]
+}

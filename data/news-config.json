@@ -1,0 +1,16 @@
+{
+  "retentionDays": 30,
+  "maxPerState": 60,
+  "economyTerms": ["economy", "investment", "FDI", "industry", "manufacturing", "export", "policy", "plant", "factory", "infrastructure", "budget", "jobs"],
+  "titleKeywords": ["econom", "invest", "fdi", "industr", "manufactur", "export", "import", "policy", "plant", "factory", "infra", "port", "budget", "tax", "gst", "job", "employ", "startup", "semiconductor", "auto", "electronic", "textile", "chemical", "bank", "finance", "fund", "crore", "mou", "project", "trade", "growth", "gdp", "power", "company", "firm", "market"],
+  "states": {
+    "tamil-nadu": ["Tamil Nadu", "Chennai", "Coimbatore", "Sriperumbudur", "Hosur"],
+    "andhra-pradesh": ["Andhra Pradesh", "Visakhapatnam", "Amaravati", "Sri City", "Anantapur"],
+    "gujarat": ["Gujarat", "Ahmedabad", "Sanand", "Dholera", "Surat", "GIFT City"],
+    "maharashtra": ["Maharashtra", "Mumbai", "Pune", "Nagpur", "Chakan"],
+    "karnataka": ["Karnataka", "Bengaluru", "Bangalore", "Mysuru"],
+    "uttar-pradesh": ["Uttar Pradesh", "Noida", "Lucknow", "Greater Noida", "Jewar"],
+    "telangana": ["Telangana", "Hyderabad"],
+    "haryana": ["Haryana", "Gurugram", "Gurgaon", "Manesar"]
+  }
+}

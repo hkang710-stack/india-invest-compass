@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "version": "0.1",
+    "updatedAt": "2026-10-26",
+    "status": "초기 추정치",
+    "note": "점수(0~100)는 공개 자료를 바탕으로 한 1차 정성 평가입니다. 학기 중 조사 결과로 숫자와 근거(basis)를 교체하세요. 한국 기업 클러스터 점수는 korean-sites.json에서 자동 계산되므로 여기에는 없습니다."
+  },
+  "states": [
+    {
+      "id": "tamil-nadu",
+      "nameKo": "타밀나두",
+      "nameEn": "Tamil Nadu",
+      "capital": "첸나이",
+      "region": "첸나이 일대",
+      "type": "기존 클러스터",
+      "summary": "현대차(1998~)를 앵커로 부품사가 모여든 한국 기업 최대 거점. 자동차·가전·섬유 제조 기반이 두껍고 항만이 가깝습니다.",
+      "scores": { "port": 85, "incentive": 80, "laborCost": 65, "finance": 70 },
+      "industryFit": { "auto": 95, "electronics": 85, "chemical": 65, "textile": 95, "it": 80, "finance": 65 },
+      "basis": {
+        "port": "첸나이항·카마라자르(엔노르)항·투투쿠디(V.O.C.)항",
+        "incentive": "전자·EV 부품 특화 인센티브, Guidance TN 단일창구",
+        "laborCost": "숙련 제조 인력 풍부, 임금은 남부 평균 수준. 2024~25년 삼성 노사 갈등",
+        "finance": "첸나이 금융·IT 서비스 거점"
+      }
+    },
+    {
+      "id": "andhra-pradesh",
+      "nameKo": "안드라 프라데시",
+      "nameEn": "Andhra Pradesh",
+      "capital": "아마라바티",
+      "region": "첸나이 일대",
+      "type": "인접 주의 인센티브",
+      "summary": "첸나이 생활권과 맞닿은 남부 해안주. 기아 페누콘다, LG 스리시티처럼 주 정부의 적극적 유치로 기업을 끌어오고 있습니다.",
+      "scores": { "port": 80, "incentive": 90, "laborCost": 75, "finance": 40 },
+      "industryFit": { "auto": 75, "electronics": 65, "chemical": 65, "textile": 45, "it": 40, "finance": 35 },
+      "basis": {
+        "port": "비샤카파트남·크리슈나파트남·강가바람항, 본토 2위 해안선",
+        "incentive": "토지 신속 제공·단일창구로 기아·LG 유치, 화승의 타밀나두→쿠팜 이전 사례",
+        "laborCost": "남부 대도시권 대비 인건비 낮은 편",
+        "finance": "주도 아마라바티 건설 중, 금융 기반 약함"
+      }
+    },
+    {
+      "id": "gujarat",
+      "nameKo": "구자라트",
+      "nameEn": "Gujarat",
+      "capital": "간디나가르",
+      "region": "서부",
+      "type": "신규 거점",
+      "summary": "인도 제조업 유치 1순위 주. 대형 항만과 석유화학 단지, 반도체 신규 투자가 몰리지만 한국 기업은 아직 적습니다.",
+      "scores": { "port": 95, "incentive": 90, "laborCost": 75, "finance": 80 },
+      "industryFit": { "auto": 80, "electronics": 85, "chemical": 100, "textile": 90, "it": 45, "finance": 75 },
+      "basis": {
+        "port": "문드라(인도 최대 민간항)·디나다얄(칸들라)·피파바브항",
+        "incentive": "반도체 정책(마이크론 사난드, 타타 돌레라), 산업단지 공급",
+        "laborCost": "최저임금 비교적 낮고 노사 관계 안정적",
+        "finance": "GIFT City 국제금융서비스센터(IFSC)"
+      }
+    },
+    {
+      "id": "maharashtra",
+      "nameKo": "마하라슈트라",
+      "nameEn": "Maharashtra",
+      "capital": "뭄바이",
+      "region": "푸네 일대",
+      "type": "서부 제조업 중심지",
+      "summary": "인도 최대 경제 주이자 금융 수도. 푸네 자동차 벨트에 현대차 탈레가온·LG·포스코·효성이 있지만 토지·인건비 부담이 큽니다.",
+      "scores": { "port": 85, "incentive": 70, "laborCost": 45, "finance": 100 },
+      "industryFit": { "auto": 90, "electronics": 60, "chemical": 85, "textile": 75, "it": 85, "finance": 100 },
+      "basis": {
+        "port": "JNPA(나바셰바) 인도 최대 컨테이너항, 뭄바이항",
+        "incentive": "대규모 투자 패키지 제공, 다만 토지 확보 비용 높음",
+        "laborCost": "뭄바이·푸네권 임금·물가 높음",
+        "finance": "RBI·NSE·BSE 소재, 인도 금융 수도"
+      }
+    },
+    {
+      "id": "karnataka",
+      "nameKo": "카르나타카",
+      "nameEn": "Karnataka",
+      "capital": "벵갈루루",
+      "region": "벵갈루루·하이데라바드",
+      "type": "R&D 거점",
+      "summary": "벵갈루루를 중심으로 한 인도 IT·스타트업 수도. 삼성·LG 연구소가 있으며 생산보다 R&D 기능이 강합니다.",
+      "scores": { "port": 50, "incentive": 70, "laborCost": 50, "finance": 75 },
+      "industryFit": { "auto": 65, "electronics": 80, "chemical": 50, "textile": 60, "it": 100, "finance": 70 },
+      "basis": {
+        "port": "뉴망갈로르항 (서해안, 중간 규모)",
+        "incentive": "IT·ESDM·R&D 특화 정책",
+        "laborCost": "벵갈루루 IT 인력 인건비 높음",
+        "finance": "스타트업·핀테크·VC 투자 중심지"
+      }
+    },
+    {
+      "id": "uttar-pradesh",
+      "nameKo": "우타르 프라데시",
+      "nameEn": "Uttar Pradesh",
+      "capital": "러크나우",
+      "region": "델리 수도권",
+      "type": "북인도 내수 시장",
+      "summary": "인구 최대 주. 노이다에 삼성 스마트폰 공장과 LG가 있는 전자 제조 허브로, 북인도 내수 시장 접근성이 강점입니다.",
+      "scores": { "port": 20, "incentive": 80, "laborCost": 85, "finance": 50 },
+      "industryFit": { "auto": 50, "electronics": 85, "chemical": 45, "textile": 60, "it": 65, "finance": 45 },
+      "basis": {
+        "port": "내륙주 — 화물전용철도(DFC)로 서해안 항만 연결",
+        "incentive": "전자 제조 보조금, 노이다·제와르 공항 인근 산업단지",
+        "laborCost": "인건비 낮고 인력 풍부",
+        "finance": "노이다는 델리 금융권 인접, 주 자체 기반은 약함"
+      }
+    },
+    {
+      "id": "telangana",
+      "nameKo": "텔랑가나",
+      "nameEn": "Telangana",
+      "capital": "하이데라바드",
+      "region": "벵갈루루·하이데라바드",
+      "type": "R&D 거점",
+      "summary": "하이데라바드의 IT·제약 클러스터와 글로벌 기업 GCC가 모인 주. 현대차 인도 연구법인이 있습니다.",
+      "scores": { "port": 15, "incentive": 75, "laborCost": 70, "finance": 70 },
+      "industryFit": { "auto": 45, "electronics": 65, "chemical": 70, "textile": 45, "it": 90, "finance": 65 },
+      "basis": {
+        "port": "내륙주 — 안드라 프라데시 항만 이용",
+        "incentive": "TG-iPASS 단일창구 인허가, 제약·IT 단지",
+        "laborCost": "벵갈루루보다 낮은 중간 수준",
+        "finance": "글로벌 금융사 백오피스·GCC 집적"
+      }
+    },
+    {
+      "id": "haryana",
+      "nameKo": "하리아나",
+      "nameEn": "Haryana",
+      "capital": "찬디가르",
+      "region": "델리 수도권",
+      "type": "북인도 본사 거점",
+      "summary": "구루그람을 중심으로 다국적 기업 본사가 모인 델리 수도권 주. 마루티 스즈키 등 자동차 산업 기반이 있습니다.",
+      "scores": { "port": 25, "incentive": 60, "laborCost": 40, "finance": 65 },
+      "industryFit": { "auto": 85, "electronics": 55, "chemical": 40, "textile": 60, "it": 75, "finance": 65 },
+      "basis": {
+        "port": "내륙주 — 서부 DFC로 구자라트·마하라슈트라 항만 연결",
+        "incentive": "타 주 대비 유치 패키지 제한적",
+        "laborCost": "구루그람권 최저임금 높은 편",
+        "finance": "구루그람 다국적 기업 본사·금융 서비스"
+      }
+    }
+  ]
+}
