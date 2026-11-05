@@ -1,7 +1,9 @@
 export type IndustryId = "auto" | "electronics" | "chemical" | "textile" | "it" | "finance";
-export type CriterionId = "port" | "korean" | "incentive" | "laborCost" | "finance";
-/** states.json에 직접 적는 조건 (korean은 거점 데이터에서 계산) */
-export type ManualCriterionId = Exclude<CriterionId, "korean">;
+export type CriterionId = "port" | "korean" | "us" | "incentive" | "laborCost" | "finance";
+/** states.json에 직접 적는 조건 (korean·us는 거점 데이터에서 계산) */
+export type ManualCriterionId = Exclude<CriterionId, "korean" | "us">;
+/** 거점 기업의 국적 */
+export type SiteOrigin = "kr" | "us";
 
 export interface Industry {
   id: IndustryId;
@@ -54,6 +56,8 @@ export interface CompassData {
   koreanStatusWeights: Record<string, number>;
   koreanSites: Record<string, KoreanSite[]>;
   koreanSitesSource: string;
+  usSites: Record<string, KoreanSite[]>;
+  usSitesSource: string;
 }
 
 export interface ScoreBreakdown {
@@ -70,6 +74,7 @@ export interface RankedState {
   industryFit: number;
   breakdown: ScoreBreakdown[];
   sites: KoreanSite[];
+  usSites: KoreanSite[];
 }
 
 /** 지도·검색에 쓰는 주 요약 정보 */
@@ -83,6 +88,9 @@ export interface StateCard {
   summary: string;
   koreanScore: number;
   siteCount: number;
+  usScore: number;
+  usSiteCount: number;
+  usCompanies: string[];
   topIndustries: string[];
   companies: string[];
   newsCount: number;

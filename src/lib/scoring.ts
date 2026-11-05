@@ -10,18 +10,21 @@ import type {
 } from "./types";
 
 /** 거점 상태별 가중치를 합산해 가장 많은 주를 100으로 맞춘 점수 */
-export function koreanClusterScores(data: CompassData): Record<string, number> {
+function clusterScores(data: CompassData, sitesByState: Record<string, KoreanSite[]>): Record<string, number> {
   const raw: Record<string, number> = {};
   for (const s of data.states) {
-    const sites = data.koreanSites[s.id] ?? [];
+    const sites = sitesByState[s.id] ?? [];
     raw[s.id] = sites.reduce((sum, site) => sum + (data.koreanStatusWeights[site.status] ?? 0), 0);
   }
   const max = Math.max(...Object.values(raw), 1);
   return Object.fromEntries(Object.entries(raw).map(([id, v]) => [id, Math.round((v / max) * 100)]));
 }
 
-function describeSites(sites: KoreanSite[]): string {
-  if (sites.length === 0) return "조사된 한국 기업 거점 없음";
+export const koreanClusterScores = (data: CompassData) => clusterScores(data, data.koreanSites);
+export const usClusterScores = (data: CompassData) => clusterScores(data, data.usSites);
+
+function describeSites(sites: KoreanSite[], who: string): string {
+  if (sites.length === 0) return `조사된 ${who} 기업 거점 없음`;
   const companies = [...new Set(sites.map((s) => s.company))];
   const shown = companies.slice(0, 3).join(", ");
   return `거점 ${sites.length}곳 — ${shown}${companies.length > 3 ? ` 외 ${companies.length - 3}개사` : ""}`;
@@ -37,14 +40,16 @@ export function rankStates(
   selected: CriterionId[],
 ): RankedState[] {
   const korean = koreanClusterScores(data);
+  const us = usClusterScores(data);
   const industry = data.industries.find((i) => i.id === industryId);
   const w = data.industryWeight;
 
   const criterionScore = (s: StateProfile, id: CriterionId) =>
-    id === "korean" ? korean[s.id] : s.scores[id];
+    id === "korean" ? korean[s.id] : id === "us" ? us[s.id] : s.scores[id];
 
   const rows = data.states.map((state) => {
     const sites = data.koreanSites[state.id] ?? [];
+    const usSites = data.usSites[state.id] ?? [];
     const industryFit = state.industryFit[industryId];
     const breakdown: ScoreBreakdown[] = [
       { id: "industry", label: `${industry?.label ?? ""} 산업 적합도`, score: industryFit, basis: state.summary },
@@ -54,7 +59,12 @@ export function rankStates(
           id: c.id,
           label: c.label,
           score: criterionScore(state, c.id),
-          basis: c.id === "korean" ? describeSites(sites) : state.basis[c.id],
+          basis:
+            c.id === "korean"
+              ? describeSites(sites, "한국")
+              : c.id === "us"
+                ? describeSites(usSites, "미국")
+                : state.basis[c.id],
         })),
     ];
     const critScores = breakdown.slice(1).map((b) => b.score);
@@ -62,7 +72,7 @@ export function rankStates(
       critScores.length === 0
         ? industryFit
         : w * industryFit + (1 - w) * (critScores.reduce((a, b) => a + b, 0) / critScores.length);
-    return { state, rank: 0, total: Math.round(total * 10) / 10, industryFit, breakdown, sites };
+    return { state, rank: 0, total: Math.round(total * 10) / 10, industryFit, breakdown, sites, usSites };
   });
 
   rows.sort((a, b) => b.total - a.total || b.industryFit - a.industryFit);
@@ -73,8 +83,10 @@ const ACTIVE_STATUSES = new Set(["가동", "건설 중", "본사·R&D"]);
 
 export function buildStateCards(data: CompassData, newsCounts: Record<string, number> = {}): StateCard[] {
   const korean = koreanClusterScores(data);
+  const us = usClusterScores(data);
   return data.states.map((s) => {
     const sites = data.koreanSites[s.id] ?? [];
+    const usSites = data.usSites[s.id] ?? [];
     const topIndustries = data.industries
       .map((i) => ({ label: i.label, fit: s.industryFit[i.id] }))
       .sort((a, b) => b.fit - a.fit)
@@ -90,8 +102,11 @@ export function buildStateCards(data: CompassData, newsCounts: Record<string, nu
       summary: s.summary,
       koreanScore: korean[s.id],
       siteCount: sites.filter((x) => ACTIVE_STATUSES.has(x.status)).length,
+      usScore: us[s.id],
+      usSiteCount: usSites.filter((x) => ACTIVE_STATUSES.has(x.status)).length,
       topIndustries,
       companies: [...new Set(sites.map((x) => x.company))],
+      usCompanies: [...new Set(usSites.map((x) => x.company))],
       newsCount: newsCounts[s.id] ?? 0,
     };
   });

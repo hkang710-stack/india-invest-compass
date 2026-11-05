@@ -276,6 +276,31 @@ a { color: var(--accent); }
 .status { display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 0.78rem; white-space: nowrap; background: var(--track); color: var(--muted); }
 .status[data-status="가동"] { background: var(--accent-soft); color: var(--accent); }
 .status[data-status="건설 중"], .status[data-status="계획·검토"] { color: var(--saffron); }
+@media (max-width: 860px) { .site-map { position: static; } }
+/* 국적: 한국 = 원, 미국 = 마름모 (색은 상태) */
+.sm-dot polygon { stroke: var(--surface); fill-opacity: 0.9; }
+.sm-dot.run polygon { fill: var(--accent); }
+.sm-dot.plan polygon { fill: var(--saffron); }
+.sm-dot.hq polygon { fill: #4a6fa5; }
+.sm-dot.stop polygon { fill: var(--muted); }
+.sm-dot.on polygon { stroke: var(--text); fill-opacity: 1; }
+.sm-shape::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 4px; vertical-align: -1px; border: 1.5px solid var(--text); box-sizing: border-box; }
+.sm-shape.kr::before { border-radius: 50%; }
+.sm-shape.us::before { width: 8px; height: 8px; transform: rotate(45deg); margin: 0 6px 0 2px; }
+.sites-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px; margin-bottom: 12px; }
+.sites-head .section-title { margin: 0; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 2px; background: var(--bg); }
+.seg button { border: 0; background: none; color: var(--muted); font: inherit; font-size: 0.84rem; padding: 4px 12px; border-radius: 999px; cursor: pointer; }
+.seg button.on { background: var(--accent); color: var(--surface); font-weight: 500; }
+.seg button:focus-visible { outline: 2px solid var(--saffron); outline-offset: 1px; }
+.origin { display: inline-block; padding: 0 6px; border-radius: 5px; font-size: 0.72rem; font-style: normal; font-weight: 600; white-space: nowrap; }
+.origin.kr { background: color-mix(in srgb, #c8102e 14%, var(--surface)); color: #b0182e; }
+.origin.us { background: color-mix(in srgb, #3c5aa6 16%, var(--surface)); color: #2f4f9a; }
+@media (prefers-color-scheme: dark) {
+  .origin.kr { color: #ff8a98; }
+  .origin.us { color: #9db4ff; }
+}
+.count .origin { margin: 0 3px 0 6px; padding: 0 4px; font-size: 0.68rem; vertical-align: 1px; }
 .more { display: inline-block; margin: 0 0 14px 8px; font-size: 0.86rem; }
 
 /* ── 최근 뉴스 ── */

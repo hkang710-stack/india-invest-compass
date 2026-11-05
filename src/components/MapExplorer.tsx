@@ -71,6 +71,9 @@ export default function MapExplorer({
       for (const company of c.companies) {
         if (norm(company).includes(q)) out.push({ state: c, label: company, sub: `한국 기업 → ${c.nameKo}` });
       }
+      for (const company of c.usCompanies) {
+        if (norm(company).includes(q)) out.push({ state: c, label: company, sub: `미국 기업 → ${c.nameKo}` });
+      }
     }
     return out.slice(0, 8);
   }, [query, cards]);
@@ -148,6 +151,10 @@ export default function MapExplorer({
                     <dd>
                       운영 거점 {tipCard.siteCount}곳 · 클러스터 {tipCard.koreanScore}점
                     </dd>
+                    <dt>미국 기업</dt>
+                    <dd>
+                      운영 거점 {tipCard.usSiteCount}곳 · 클러스터 {tipCard.usScore}점
+                    </dd>
                     <dt>최근 뉴스</dt>
                     <dd>{tipCard.newsCount}건 (30일)</dd>
                   </dl>
@@ -171,13 +178,13 @@ export default function MapExplorer({
 
         <aside className="side">
           <label className="search-label" htmlFor="search">
-            주·도시·한국 기업 검색
+            주·도시·한국·미국 기업 검색
           </label>
           <div className="search">
             <input
               id="search"
               type="search"
-              placeholder="예: 타밀나두, 첸나이, 기아"
+              placeholder="예: 타밀나두, 첸나이, 기아, 마이크론"
               autoComplete="off"
               value={query}
               onChange={(e) => {
@@ -227,12 +234,17 @@ export default function MapExplorer({
                     <b>{c.nameKo}</b>
                     <small>{c.type}</small>
                   </span>
-                  <span className="count">{c.siteCount}곳</span>
+                  <span className="count">
+                    <i className="origin kr">한</i>
+                    {c.siteCount}
+                    <i className="origin us">미</i>
+                    {c.usSiteCount}
+                  </span>
                 </Link>
               </li>
             ))}
           </ul>
-          <p className="side-note">숫자는 운영 중인 한국 기업 거점 수</p>
+          <p className="side-note">숫자는 운영 중인 한국·미국 기업 거점 수</p>
 
           <Link href="/recommend" className="cta">
             산업·조건으로 주 추천받기 →

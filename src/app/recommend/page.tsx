@@ -24,6 +24,7 @@ export default function RecommendPage() {
           <b>데이터 상태: {data.meta.status}</b> (v{data.meta.version}, {data.meta.updatedAt}) — {data.meta.note}
         </p>
         <p>한국 기업 거점: {data.koreanSitesSource}</p>
+        <p>미국 기업 거점: {data.usSitesSource}</p>
       </footer>
     </main>
   );

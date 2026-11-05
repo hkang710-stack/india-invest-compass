@@ -5,9 +5,10 @@ import ScoreBar from "./ScoreBar";
 const ACTIVE = new Set(["가동", "건설 중", "본사·R&D"]);
 
 export default function RecommendationCard({ top }: { top: RankedState }) {
-  const { state, total, breakdown, sites } = top;
+  const { state, total, breakdown, sites, usSites } = top;
   const strengths = [...breakdown].sort((a, b) => b.score - a.score).slice(0, 2);
   const activeSites = sites.filter((s) => ACTIVE.has(s.status));
+  const activeUs = usSites.filter((s) => ACTIVE.has(s.status));
 
   return (
     <article className="card top">
@@ -59,6 +60,20 @@ export default function RecommendationCard({ top }: { top: RankedState }) {
             </li>
           ))}
           {activeSites.length > 6 && <li className="muted">외 {activeSites.length - 6}곳</li>}
+        </ul>
+      )}
+
+      <h3>현지 미국 기업 거점 {activeUs.length > 0 && <small>({activeUs.length}곳 운영 중)</small>}</h3>
+      {activeUs.length === 0 ? (
+        <p className="muted">운영 중인 미국 기업 거점이 조사되지 않았습니다.</p>
+      ) : (
+        <ul className="sites">
+          {activeUs.slice(0, 6).map((s, i) => (
+            <li key={i}>
+              <b>{s.company}</b> {s.site} <span className="muted">· {s.product}</span>
+            </li>
+          ))}
+          {activeUs.length > 6 && <li className="muted">외 {activeUs.length - 6}곳</li>}
         </ul>
       )}
     </article>

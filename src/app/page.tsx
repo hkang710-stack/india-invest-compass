@@ -21,7 +21,7 @@ export default function Home() {
       <footer className="foot">
         <p>
           <b>데이터 상태: {data.meta.status}</b> (v{data.meta.version}, {data.meta.updatedAt}) · 한국 기업 거점:{" "}
-          {data.koreanSitesSource}
+          {data.koreanSitesSource} · 미국 기업 거점: {data.usSitesSource}
         </p>
       </footer>
     </main>

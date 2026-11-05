@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "source": "미국 기업 인도 거점 (2026년 11월 1차 정리, 기사·기업 발표 기준 — 검증 필요)",
+    "updatedAt": "2026-11-05",
+    "coords": "좌표는 도시·산업단지 단위 근사값"
+  },
+  "sites": {
+    "tamil-nadu": [
+      { "company": "캐터필러 (Caterpillar)", "site": "티루발루르 공장", "product": "굴착기·건설장비", "status": "가동", "lat": 13.14, "lng": 79.91 },
+      { "company": "캐터필러 (Caterpillar)", "site": "호수르 공장", "product": "건설장비 부품·엔진", "status": "가동", "lat": 12.74, "lng": 77.83 },
+      { "company": "퍼스트솔라 (First Solar)", "site": "첸나이 스리페룸부두르 공장", "product": "박막 태양광 모듈", "status": "가동", "lat": 12.93, "lng": 79.93 },
+      { "company": "포드 (Ford)", "site": "첸나이 마라이말라이나가르 공장", "product": "완성차 생산 중단(2022) → 수출용 엔진 공장 재가동 추진", "status": "계획·검토", "lat": 12.79, "lng": 80.02 },
+      { "company": "코그니전트 (Cognizant)", "site": "첸나이 시루세리 캠퍼스", "product": "IT 서비스·개발 거점", "status": "본사·R&D", "lat": 12.83, "lng": 80.22 }
+    ],
+    "andhra-pradesh": [
+      { "company": "구글 (Google)", "site": "비샤카파트남 AI 허브", "product": "AI 데이터센터 (약 150억 달러 투자 발표, 2025)", "status": "계획·검토", "lat": 17.69, "lng": 83.22 },
+      { "company": "몬델리즈 (Mondelez)", "site": "스리시티 공장", "product": "초콜릿·과자", "status": "가동", "lat": 13.53, "lng": 80.0 },
+      { "company": "콜게이트 (Colgate-Palmolive)", "site": "스리시티 공장", "product": "치약·생활용품", "status": "가동", "lat": 13.54, "lng": 80.01 }
+    ],
+    "gujarat": [
+      { "company": "마이크론 (Micron)", "site": "사난드 반도체 공장", "product": "메모리 반도체 조립·테스트(ATMP)", "status": "건설 중", "lat": 22.99, "lng": 72.38 },
+      { "company": "포드 (Ford)", "site": "사난드 공장", "product": "완성차 — 타타모터스에 매각(2023)", "status": "중단", "lat": 22.98, "lng": 72.37 }
+    ],
+    "maharashtra": [
+      { "company": "존디어 (John Deere)", "site": "푸네 사나스와디 공장", "product": "트랙터·엔진", "status": "가동", "lat": 18.63, "lng": 73.95 },
+      { "company": "커민스 (Cummins)", "site": "푸네 본사·공장", "product": "디젤·가스 엔진, 발전기", "status": "가동", "lat": 18.52, "lng": 73.8 },
+      { "company": "월풀 (Whirlpool)", "site": "푸네 란장가온 공장", "product": "냉장고·세탁기", "status": "가동", "lat": 18.75, "lng": 74.24 },
+      { "company": "아마존웹서비스 (AWS)", "site": "뭄바이 리전 데이터센터", "product": "클라우드 데이터센터", "status": "가동", "lat": 19.1, "lng": 72.9 },
+      { "company": "마이크로소프트 (Microsoft)", "site": "푸네 데이터센터 (Central India 리전)", "product": "클라우드 데이터센터", "status": "가동", "lat": 18.56, "lng": 73.91 },
+      { "company": "애플 (Apple)", "site": "뭄바이 BKC 직영점", "product": "인도 첫 애플 직영 매장 (2023)", "status": "가동", "lat": 19.07, "lng": 72.87 },
+      { "company": "제너럴모터스 (GM)", "site": "푸네 탈레가온 공장", "product": "완성차 — 현대차에 매각(2024)", "status": "중단", "lat": 18.72, "lng": 73.67 }
+    ],
+    "karnataka": [
+      { "company": "보잉 (Boeing)", "site": "벵갈루루 BIETC 캠퍼스", "product": "항공 엔지니어링·기술센터 (미국 밖 최대)", "status": "본사·R&D", "lat": 13.22, "lng": 77.71 },
+      { "company": "인텔 (Intel)", "site": "벵갈루루 R&D 캠퍼스", "product": "반도체 설계·소프트웨어", "status": "본사·R&D", "lat": 12.93, "lng": 77.69 },
+      { "company": "텍사스인스트루먼트 (TI)", "site": "벵갈루루 R&D 센터", "product": "아날로그·임베디드 칩 설계", "status": "본사·R&D", "lat": 12.98, "lng": 77.66 },
+      { "company": "GE 에어로스페이스", "site": "벵갈루루 존 F. 웰치 기술센터", "product": "항공엔진 R&D", "status": "본사·R&D", "lat": 12.97, "lng": 77.73 },
+      { "company": "어플라이드머티어리얼즈 (Applied Materials)", "site": "벵갈루루 엔지니어링 센터", "product": "반도체 장비 설계·소프트웨어", "status": "본사·R&D", "lat": 12.95, "lng": 77.7 },
+      { "company": "월마트 (Walmart) · 플립카트", "site": "벵갈루루 본사·글로벌테크 센터", "product": "이커머스(플립카트 본사)·기술 개발", "status": "본사·R&D", "lat": 12.94, "lng": 77.69 }
+    ],
+    "uttar-pradesh": [
+      { "company": "어도비 (Adobe)", "site": "노이다 캠퍼스", "product": "소프트웨어 개발", "status": "본사·R&D", "lat": 28.53, "lng": 77.39 },
+      { "company": "마이크로소프트 (Microsoft)", "site": "노이다 개발센터", "product": "소프트웨어 개발", "status": "본사·R&D", "lat": 28.5, "lng": 77.41 }
+    ],
+    "telangana": [
+      { "company": "마이크로소프트 (Microsoft)", "site": "하이데라바드 IDC 캠퍼스", "product": "미국 밖 최대 개발센터 중 하나", "status": "본사·R&D", "lat": 17.43, "lng": 78.34 },
+      { "company": "아마존 (Amazon)", "site": "하이데라바드 캠퍼스", "product": "아마존 최대 단일 사옥", "status": "본사·R&D", "lat": 17.42, "lng": 78.35 },
+      { "company": "구글 (Google)", "site": "하이데라바드 캠퍼스", "product": "엔지니어링 거점", "status": "본사·R&D", "lat": 17.44, "lng": 78.38 },
+      { "company": "퀄컴 (Qualcomm)", "site": "하이데라바드 R&D 센터", "product": "모바일 칩 설계", "status": "본사·R&D", "lat": 17.43, "lng": 78.37 },
+      { "company": "타타-록히드마틴 (TLMAL)", "site": "아디발트라 항공우주단지", "product": "C-130J 부품 (합작)", "status": "협력", "lat": 17.22, "lng": 78.56 },
+      { "company": "타타-보잉 (TBAL)", "site": "아디발트라 항공우주단지", "product": "아파치 헬기 동체 (합작)", "status": "협력", "lat": 17.215, "lng": 78.565 }
+    ],
+    "haryana": [
+      { "company": "월풀 (Whirlpool)", "site": "파리다바드 공장", "product": "냉장고·가전", "status": "가동", "lat": 28.4, "lng": 77.32 },
+      { "company": "아메리칸익스프레스 (Amex)", "site": "구르가온 서비스·기술센터", "product": "금융 서비스·기술", "status": "본사·R&D", "lat": 28.46, "lng": 77.07 },
+      { "company": "펩시코 (PepsiCo)", "site": "구르가온 인도 본사", "product": "식음료 인도 법인 본사", "status": "본사·R&D", "lat": 28.48, "lng": 77.09 },
+      { "company": "코카콜라 (Coca-Cola)", "site": "구르가온 인도 본사", "product": "음료 인도 법인 본사", "status": "본사·R&D", "lat": 28.47, "lng": 77.08 }
+    ]
+  }
+}

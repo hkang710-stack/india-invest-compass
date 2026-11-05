@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import KoreanSites from "@/components/KoreanSites";
+import CompanySites, { type TaggedSite } from "@/components/CompanySites";
 import NewsList from "@/components/NewsList";
 import ScoreBar from "@/components/ScoreBar";
 import { loadCompassData } from "@/lib/data";
 import { buildStateMap } from "@/lib/geo";
 import { loadNews, newsForState } from "@/lib/news";
-import { koreanClusterScores } from "@/lib/scoring";
+import { koreanClusterScores, usClusterScores } from "@/lib/scoring";
 
 const STATUS_ORDER = ["가동", "건설 중", "본사·R&D", "협력", "계획·검토", "중단"];
 
@@ -30,14 +30,24 @@ export default async function StatePage({ params }: PageProps<"/states/[id]">) {
   const state = data.states[index];
   const news = loadNews();
   const korean = koreanClusterScores(data)[state.id];
-  const sites = [...(data.koreanSites[state.id] ?? [])].sort(
-    (a, b) => STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status),
-  );
+  const us = usClusterScores(data)[state.id];
+  const byStatus = (a: { status: string }, b: { status: string }) =>
+    STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status);
+  const sites = [...(data.koreanSites[state.id] ?? [])].sort(byStatus);
+  const usSites = [...(data.usSites[state.id] ?? [])].sort(byStatus);
+  const allSites: TaggedSite[] = [
+    ...sites.map((s) => ({ ...s, origin: "kr" as const })),
+    ...usSites.map((s) => ({ ...s, origin: "us" as const })),
+  ];
   const industries = [...data.industries].sort((a, b) => state.industryFit[b.id] - state.industryFit[a.id]);
   const criterionScore = (cid: string) =>
-    cid === "korean" ? korean : state.scores[cid as keyof typeof state.scores];
+    cid === "korean" ? korean : cid === "us" ? us : state.scores[cid as keyof typeof state.scores];
   const criterionBasis = (cid: string) =>
-    cid === "korean" ? `한국 기업 거점 ${sites.length}곳 (위 목록)` : state.basis[cid as keyof typeof state.basis];
+    cid === "korean"
+      ? `한국 기업 거점 ${sites.length}곳 (위 목록)`
+      : cid === "us"
+        ? `미국 기업 거점 ${usSites.length}곳 (위 목록)`
+        : state.basis[cid as keyof typeof state.basis];
   const prev = data.states[(index - 1 + data.states.length) % data.states.length];
   const next = data.states[(index + 1) % data.states.length];
 
@@ -60,11 +70,12 @@ export default async function StatePage({ params }: PageProps<"/states/[id]">) {
           <span className="tag">{state.region}</span>
           <span className="tag">주도 {state.capital}</span>
           <span className="tag">한국 기업 거점 {sites.length}곳</span>
+          <span className="tag">미국 기업 거점 {usSites.length}곳</span>
         </p>
         <p className="summary">{state.summary}</p>
       </article>
 
-      <KoreanSites sites={sites} map={buildStateMap(state.nameEn, sites)} />
+      <CompanySites sites={allSites} map={buildStateMap(state.nameEn, allSites)} />
 
       <div className="detail-grid">
         <section className="card">
@@ -104,7 +115,7 @@ export default async function StatePage({ params }: PageProps<"/states/[id]">) {
       <footer className="foot">
         <p>
           데이터 상태: {data.meta.status} (v{data.meta.version}, {data.meta.updatedAt}) · 한국 기업 거점:{" "}
-          {data.koreanSitesSource}
+          {data.koreanSitesSource} · 미국 기업 거점: {data.usSitesSource}
         </p>
       </footer>
     </main>
