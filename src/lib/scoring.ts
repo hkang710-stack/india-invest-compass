@@ -3,11 +3,15 @@ import type {
   CriterionId,
   IndustryId,
   KoreanSite,
+  MapPin,
   RankedState,
   ScoreBreakdown,
+  SiteOrigin,
   StateCard,
   StateProfile,
 } from "./types";
+import stateNames from "@data/state-names.json";
+import { projectLatLng } from "./geo";
 
 /** 거점 상태별 가중치를 합산해 가장 많은 주를 100으로 맞춘 점수 */
 function clusterScores(data: CompassData, sitesByState: Record<string, KoreanSite[]>): Record<string, number> {
@@ -80,6 +84,27 @@ export function rankStates(
 }
 
 const ACTIVE_STATUSES = new Set(["가동", "건설 중", "본사·R&D"]);
+
+/** 비교 대상 밖의 주까지 포함해 모든 거점을 전국 지도 좌표로 */
+export function buildMapPins(data: CompassData): MapPin[] {
+  const names = stateNames as Record<string, string>;
+  const ko = (id: string) =>
+    data.states.find((s) => s.id === id)?.nameKo ??
+    names[id.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ")] ??
+    id;
+  const pins: MapPin[] = [];
+  const add = (byState: Record<string, KoreanSite[]>, origin: SiteOrigin) => {
+    for (const [stateId, sites] of Object.entries(byState)) {
+      for (const s of sites) {
+        const [x, y] = projectLatLng(s.lat, s.lng);
+        pins.push({ x, y, origin, company: s.company, site: s.site, status: s.status, stateId, stateKo: ko(stateId) });
+      }
+    }
+  };
+  add(data.koreanSites, "kr");
+  add(data.usSites, "us");
+  return pins;
+}
 
 export function buildStateCards(data: CompassData, newsCounts: Record<string, number> = {}): StateCard[] {
   const korean = koreanClusterScores(data);

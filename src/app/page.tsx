@@ -3,7 +3,7 @@ import { loadCompassData } from "@/lib/data";
 import { buildMapData } from "@/lib/geo";
 import { loadIssues } from "@/lib/issues";
 import { newsCounts } from "@/lib/news";
-import { buildStateCards } from "@/lib/scoring";
+import { buildMapPins, buildStateCards } from "@/lib/scoring";
 
 export default function Home() {
   const data = loadCompassData();
@@ -16,7 +16,12 @@ export default function Home() {
         <p className="lead">주 위에 마우스를 올리면 요약이, 클릭하거나 오른쪽에서 검색하면 상세 정보가 나옵니다.</p>
       </header>
 
-      <MapExplorer map={buildMapData()} cards={buildStateCards(data, newsCounts())} issues={loadIssues()} />
+      <MapExplorer
+        map={buildMapData()}
+        cards={buildStateCards(data, newsCounts())}
+        issues={loadIssues()}
+        pins={buildMapPins(data)}
+      />
 
       <footer className="foot">
         <p>

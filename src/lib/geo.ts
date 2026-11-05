@@ -74,6 +74,12 @@ export function buildMapData(): MapData {
   return { viewBox: `0 0 ${w} ${h}`, shapes: projectShapes().map(stripBox) };
 }
 
+/** 전국 지도(buildMapData) 좌표계로 위경도를 옮깁니다 */
+export function projectLatLng(lat: number, lng: number): [number, number] {
+  const [x, y] = project([lng, lat]);
+  return [Math.round(x * 10) / 10, Math.round(y * 10) / 10];
+}
+
 export interface StateMap {
   viewBox: string;
   /** 주 크기의 1/100 (점·글자 크기 기준) */

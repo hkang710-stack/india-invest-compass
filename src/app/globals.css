@@ -387,3 +387,22 @@ a { color: var(--accent); }
   .issue-rail .issue-square:first-child { left: 12px; }
   .issue-rail .issue-square:last-child { right: 12px; }
 }
+
+/* ── 전국 지도 기업 거점 ── */
+.pins .pin { cursor: pointer; }
+.pin circle, .pin polygon { stroke: var(--surface); stroke-width: 1.2; fill-opacity: 0.92; }
+.pin.run circle, .pin.run polygon { fill: var(--accent); }
+.pin.plan circle, .pin.plan polygon { fill: var(--saffron); }
+.pin.hq circle, .pin.hq polygon { fill: #4a6fa5; }
+.pin.stop circle, .pin.stop polygon { fill: var(--muted); }
+.pin:hover circle, .pin:hover polygon { stroke: var(--text); fill-opacity: 1; }
+.pin text { fill: #fff; font-size: 7px; font-weight: 700; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.pin-tip ul { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 5px; }
+.pin-tip li { font-size: 0.82rem; line-height: 1.35; }
+.pin-tip li span { color: var(--muted); }
+.pin-tip li small { display: block; color: var(--muted); font-size: 0.72rem; }
+.pin-toggles { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 8px; font-size: 0.8rem; }
+.pin-toggle { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); cursor: pointer; }
+.pin-toggle input { accent-color: var(--accent); margin: 0; }
+.pin-toggle small { color: var(--muted); }
+.pin-note { flex-basis: 100%; color: var(--muted); font-size: 0.72rem; }

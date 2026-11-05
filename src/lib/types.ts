@@ -77,6 +77,18 @@ export interface RankedState {
   usSites: KoreanSite[];
 }
 
+/** 전국 지도에 찍는 기업 거점 하나 */
+export interface MapPin {
+  x: number;
+  y: number;
+  origin: SiteOrigin;
+  company: string;
+  site: string;
+  status: string;
+  stateId: string;
+  stateKo: string;
+}
+
 /** 지도·검색에 쓰는 주 요약 정보 */
 export interface StateCard {
   id: string;

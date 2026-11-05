@@ -7,7 +7,7 @@ import IssueBoard from "@/components/IssueBoard";
 import IssueSquare from "@/components/IssueSquare";
 import type { MapData } from "@/lib/geo";
 import type { Issue, IssueStore } from "@/lib/issues";
-import type { StateCard } from "@/lib/types";
+import type { MapPin, SiteOrigin, StateCard } from "@/lib/types";
 
 interface Tip {
   nameEn: string;
@@ -22,16 +22,62 @@ interface Hit {
   sub: string;
 }
 
+interface PinCluster {
+  x: number;
+  y: number;
+  origin: SiteOrigin;
+  pins: MapPin[];
+}
+
+interface PinTip {
+  cluster: PinCluster;
+  x: number;
+  y: number;
+  flip: boolean;
+}
+
+const PIN_STATUS: Record<string, string> = {
+  가동: "run",
+  "건설 중": "plan",
+  "계획·검토": "plan",
+  "본사·R&D": "hq",
+  협력: "hq",
+  중단: "stop",
+};
+const ORIGIN_KO: Record<SiteOrigin, string> = { kr: "한국", us: "미국" };
+
+/** 전국 지도에서 가까운 같은 국적 거점끼리 묶기 */
+function clusterPins(pins: MapPin[], radius: number): PinCluster[] {
+  const out: PinCluster[] = [];
+  for (const p of pins) {
+    const near = out.find((c) => c.origin === p.origin && Math.hypot(c.x - p.x, c.y - p.y) < radius);
+    if (near) {
+      near.pins.push(p);
+      const n = near.pins.length;
+      near.x += (p.x - near.x) / n;
+      near.y += (p.y - near.y) / n;
+    } else out.push({ x: p.x, y: p.y, origin: p.origin, pins: [p] });
+  }
+  // 한국 묶음과 겹치는 미국 묶음은 비켜 두고, 한국 표시를 위에 그립니다
+  for (const c of out) {
+    if (c.origin === "us" && out.some((k) => k.origin === "kr" && Math.hypot(k.x - c.x, k.y - c.y) < radius))
+      c.x += radius * 1.1;
+  }
+  return out.sort((a, b) => (a.origin === b.origin ? 0 : a.origin === "us" ? -1 : 1));
+}
+
 const norm = (s: string) => s.toLowerCase().replace(/[\s·\-()]/g, "");
 
 export default function MapExplorer({
   map,
   cards,
   issues,
+  pins,
 }: {
   map: MapData;
   cards: StateCard[];
   issues: IssueStore;
+  pins: MapPin[];
 }) {
   const router = useRouter();
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -39,6 +85,11 @@ export default function MapExplorer({
   const [focusId, setFocusId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [cursor, setCursor] = useState(0);
+  const [showPins, setShowPins] = useState<Record<SiteOrigin, boolean>>({ kr: true, us: false });
+  const [pinTip, setPinTip] = useState<PinTip | null>(null);
+  const clusters = useMemo(() => clusterPins(pins.filter((p) => showPins[p.origin]), 9), [pins, showPins]);
+  const pinCount = (o: SiteOrigin) => pins.filter((p) => p.origin === o).length;
+  const pinStates = (o: SiteOrigin) => new Set(pins.filter((p) => p.origin === o).map((p) => p.stateId)).size;
 
   const byEn = useMemo(() => new Map(cards.map((c) => [c.nameEn, c])), [cards]);
   const go = (id: string) => router.push(`/states/${id}`);
@@ -84,6 +135,13 @@ export default function MapExplorer({
     setTip({ nameEn, x, y: e.clientY - rect.top, flip: x > rect.width * 0.55 });
   };
 
+  const onPin = (e: React.MouseEvent, cluster: PinCluster) => {
+    const rect = wrapRef.current!.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    setTip(null);
+    setPinTip({ cluster, x, y: e.clientY - rect.top, flip: x > rect.width * 0.55 });
+  };
+
   const onKey = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -103,7 +161,14 @@ export default function MapExplorer({
   return (
     <>
       <div className="explorer">
-        <div className="map-wrap" ref={wrapRef} onMouseLeave={() => setTip(null)}>
+        <div
+          className="map-wrap"
+          ref={wrapRef}
+          onMouseLeave={() => {
+            setTip(null);
+            setPinTip(null);
+          }}
+        >
           <svg viewBox={map.viewBox} className="map" role="img" aria-label="인도 주 지도">
             {map.shapes.map((s) => {
               const card = byEn.get(s.nameEn);
@@ -127,9 +192,60 @@ export default function MapExplorer({
                   {s.nameKo}
                 </text>
               ))}
+            <g className="pins">
+              {clusters.map((c) => {
+                const n = c.pins.length;
+                const r = n > 1 ? 4.6 + Math.min(n, 12) * 0.45 : 3.4;
+                const target = cards.find((k) => k.id === c.pins[0].stateId);
+                const s = r * 1.15;
+                return (
+                  <g
+                    key={`${c.origin}-${c.x}-${c.y}`}
+                    className={`pin ${PIN_STATUS[c.pins[0].status] ?? "hq"} ${c.origin}`}
+                    onMouseMove={(e) => onPin(e, c)}
+                    onMouseLeave={() => setPinTip(null)}
+                    onClick={target ? () => go(target.id) : undefined}
+                  >
+                    {c.origin === "kr" ? (
+                      <circle cx={c.x} cy={c.y} r={r} />
+                    ) : (
+                      <polygon points={`${c.x},${c.y - s} ${c.x + s},${c.y} ${c.x},${c.y + s} ${c.x - s},${c.y}`} />
+                    )}
+                    {n > 1 && (
+                      <text x={c.x} y={c.y}>
+                        {n}
+                      </text>
+                    )}
+                  </g>
+                );
+              })}
+            </g>
           </svg>
 
-          {tip && tipShape && (
+          {pinTip && (
+            <div
+              className={`tip pin-tip${pinTip.flip ? " flip" : ""}`}
+              style={{ left: pinTip.x, top: pinTip.y }}
+              role="tooltip"
+            >
+              <p className="tip-type">
+                {ORIGIN_KO[pinTip.cluster.origin]} 기업 거점 {pinTip.cluster.pins.length}곳
+              </p>
+              <ul>
+                {pinTip.cluster.pins.slice(0, 8).map((p, i) => (
+                  <li key={i}>
+                    <b>{p.company}</b> <span>{p.site}</span>
+                    <small>
+                      {p.stateKo} · {p.status}
+                    </small>
+                  </li>
+                ))}
+                {pinTip.cluster.pins.length > 8 && <li className="tip-muted">외 {pinTip.cluster.pins.length - 8}곳</li>}
+              </ul>
+            </div>
+          )}
+
+          {tip && tipShape && !pinTip && (
             <div
               className={`tip${tip.flip ? " flip" : ""}`}
               style={{ left: tip.x, top: tip.y }}
@@ -174,6 +290,23 @@ export default function MapExplorer({
           <p className="map-legend">
             <span className="swatch target" /> 비교 대상 8개 주 <span className="swatch" /> 기타 지역
           </p>
+          <div className="pin-toggles" role="group" aria-label="지도에 표시할 기업 거점">
+            {(["kr", "us"] as SiteOrigin[]).map((o) => (
+              <label key={o} className={`pin-toggle ${o}`}>
+                <input
+                  type="checkbox"
+                  checked={showPins[o]}
+                  onChange={(e) => setShowPins((v) => ({ ...v, [o]: e.target.checked }))}
+                />
+                <span>
+                  {ORIGIN_KO[o]} 기업 거점 {pinCount(o)}곳 <small>({pinStates(o)}개 주)</small>
+                </span>
+              </label>
+            ))}
+            <small className="pin-note">
+              ● 한국 · ◆ 미국 · 색은 상태(초록 가동, 주황 건설·계획, 파랑 본사·R&amp;D, 회색 중단) · 숫자는 모인 거점 수
+            </small>
+          </div>
         </div>
 
         <aside className="side">
