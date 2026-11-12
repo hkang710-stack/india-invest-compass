@@ -92,6 +92,17 @@ export default function MapExplorer({
   const pinStates = (o: SiteOrigin) => new Set(pins.filter((p) => p.origin === o).map((p) => p.stateId)).size;
 
   const byEn = useMemo(() => new Map(cards.map((c) => [c.nameEn, c])), [cards]);
+  // 한국 기업 거점이 있는 주 (비교 대상이 아니어도 색칠) — 주 id는 영문 이름의 slug
+  const krCountByEn = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const sh of map.shapes) {
+      const id = sh.nameEn.toLowerCase().replace(/\s+/g, "-");
+      const n = pins.filter((p) => p.origin === "kr" && p.stateId === id).length;
+      if (n) m.set(sh.nameEn, n);
+    }
+    return m;
+  }, [map, pins]);
+  const krOnlyCount = [...krCountByEn.keys()].filter((en) => !byEn.has(en)).length;
   const go = (id: string) => router.push(`/states/${id}`);
 
   // 지도 왼쪽에는 서쪽 주의 최신 이슈, 오른쪽에는 동쪽 주의 최신 이슈를 하나씩
@@ -172,7 +183,11 @@ export default function MapExplorer({
           <svg viewBox={map.viewBox} className="map" role="img" aria-label="인도 주 지도">
             {map.shapes.map((s) => {
               const card = byEn.get(s.nameEn);
-              const cls = card ? `st target${highlighted === card.id ? " on" : ""}` : "st";
+              const cls = card
+                ? `st target${highlighted === card.id ? " on" : ""}`
+                : krCountByEn.has(s.nameEn)
+                  ? "st kr"
+                  : "st";
               return (
                 <path
                   key={s.nameEn}
@@ -281,6 +296,9 @@ export default function MapExplorer({
                   <p className="tip-name">
                     {tipShape.nameKo} <span>{tipShape.nameEn}</span>
                   </p>
+                  {krCountByEn.has(tipShape.nameEn) && (
+                    <p className="tip-summary">한국 기업 거점 {krCountByEn.get(tipShape.nameEn)}곳</p>
+                  )}
                   <p className="tip-muted">비교 대상 8개 주에 포함되지 않습니다</p>
                 </>
               )}
@@ -288,7 +306,8 @@ export default function MapExplorer({
           )}
 
           <p className="map-legend">
-            <span className="swatch target" /> 비교 대상 8개 주 <span className="swatch" /> 기타 지역
+            <span className="swatch target" /> 비교 대상 8개 주 <span className="swatch kr" /> 그 밖의 한국 기업 진출 주 ({krOnlyCount}곳){" "}
+            <span className="swatch" /> 기타 지역
           </p>
           <div className="pin-toggles" role="group" aria-label="지도에 표시할 기업 거점">
             {(["kr", "us"] as SiteOrigin[]).map((o) => (
