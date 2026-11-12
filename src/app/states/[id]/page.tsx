@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CompanySites, { type TaggedSite } from "@/components/CompanySites";
+import KotraNews from "@/components/KotraNews";
 import NewsList from "@/components/NewsList";
 import ScoreBar from "@/components/ScoreBar";
 import { loadCompassData } from "@/lib/data";
 import { buildStateMap } from "@/lib/geo";
+import { kotraForState, loadKotra } from "@/lib/kotra";
 import { loadNews, newsForState } from "@/lib/news";
 import { koreanClusterScores, usClusterScores } from "@/lib/scoring";
 
@@ -109,6 +111,8 @@ export default async function StatePage({ params }: PageProps<"/states/[id]">) {
           </Link>
         </section>
       </div>
+
+      <KotraNews store={loadKotra()} stateItems={kotraForState(state.id)} stateName={state.nameKo} first={5} />
 
       <NewsList items={newsForState(state.id)} retentionDays={news.retentionDays} updatedAt={news.updatedAt} />
 

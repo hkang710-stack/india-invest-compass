@@ -1,0 +1,693 @@
+{
+  "updatedAt": "2026-11-12T03:52:05.389Z",
+  "retentionDays": 180,
+  "source": "KOTRA 해외시장뉴스 (공공데이터포털)",
+  "items": [
+    {
+      "id": "245004",
+      "title": "인도 타밀나두주, 반도체 투자유치 본격화…중앙정부 미선정 기업도 지원",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=245004",
+      "date": "2026-11-10",
+      "office": "첸나이무역관",
+      "industry": "전자/전기,기타",
+      "kind": "투자진출",
+      "states": [
+        "tamil-nadu"
+      ]
+    },
+    {
+      "id": "244984",
+      "title": "2026 한-인도 에너지 라운드테이블 현장: 인도 에너지 전환, 이제는 '저장·계통·청정연료'",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244984",
+      "date": "2026-11-05",
+      "office": "뉴델리무역관",
+      "industry": "광물/에너지,그리드(전력망·기자재)",
+      "kind": "현장·인터뷰",
+      "states": []
+    },
+    {
+      "id": "244981",
+      "title": "면도기에서 세럼·향수로, 인도 남성 그루밍 시장의 세대교체",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244981",
+      "date": "2026-11-04",
+      "office": "뉴델리무역관",
+      "industry": "생활소비재",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244796",
+      "title": "우주선 부품도 3D 프린팅으로…인도 금속 적층제조 시장",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244796",
+      "date": "2026-11-02",
+      "office": "뭄바이무역관",
+      "industry": "철강/금속,기타,산업일반",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244814",
+      "title": "15억 초거대 인구를 연결하라…인도 통신·네트워크 장비 시장",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244814",
+      "date": "2026-11-02",
+      "office": "뭄바이무역관",
+      "industry": "기계류,전자/전기,IT,기타,산업일반",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244621",
+      "title": "인도 안경·광학 시장, 한국산 컬러렌즈 매력에 빠지다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244621",
+      "date": "2026-10-30",
+      "office": "첸나이무역관",
+      "industry": "생활소비재,의료바이오",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244735",
+      "title": "콜라·차 다음은 단백질·장 건강, 인도 음료 진열대가 바뀐다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244735",
+      "date": "2026-10-26",
+      "office": "뉴델리무역관",
+      "industry": "농림수산식품",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244704",
+      "title": "5G 이후의 인도 통신, '제품 국가'로 방향을 틀다…IMC 2026 현장",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244704",
+      "date": "2026-10-26",
+      "office": "뉴델리무역관",
+      "industry": "전자/전기,IT",
+      "kind": "현장·인터뷰",
+      "states": []
+    },
+    {
+      "id": "244657",
+      "title": "인도, 산업용 로봇 신규 설치 세계 6위로",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244657",
+      "date": "2026-10-19",
+      "office": "콜카타무역관",
+      "industry": "기계류",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244648",
+      "title": "인도 한국식품 시장의 유통 확대와 수출기회",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244648",
+      "date": "2026-10-19",
+      "office": "벵갈루루무역관",
+      "industry": "농림수산식품",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244550",
+      "title": "인도 배터리에너지저장시스템(BESS) 시장 주요 동향: 입찰시장과 사업모델, 경쟁구도를 중심으로",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244550",
+      "date": "2026-10-13",
+      "office": "뭄바이무역관",
+      "industry": "전자/전기",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244386",
+      "title": "인도 남부 IT 허브가 이끄는 미용·퍼스널케어(BPC) 트렌드와 K뷰티",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244386",
+      "date": "2026-10-12",
+      "office": "벵갈루루무역관",
+      "industry": "생활소비재",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244522",
+      "title": "14억 인도 국민의 발, 세계 최대 이·삼륜차 시장을 주목하라",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244522",
+      "date": "2026-10-12",
+      "office": "첸나이무역관",
+      "industry": "자동차/수송기기",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244306",
+      "title": "인도 진출을 위한 핵심 요충지, '경제 수도' 마하라슈트라 주(州) 투자환경",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244306",
+      "date": "2026-10-08",
+      "office": "뭄바이무역관",
+      "industry": "산업일반",
+      "kind": "투자진출",
+      "states": [
+        "maharashtra"
+      ]
+    },
+    {
+      "id": "244470",
+      "title": "인도 발효·바이오제조, 인센티브와 100% 자동승인으로 외국인 투자 부른다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244470",
+      "date": "2026-10-07",
+      "office": "뉴델리무역관",
+      "industry": "화학,의료바이오",
+      "kind": "투자진출",
+      "states": []
+    },
+    {
+      "id": "244385",
+      "title": "인도 반도체 2단계, 장비·소재 공급망이 열린다… SEMICON India 2026 현장",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244385",
+      "date": "2026-10-06",
+      "office": "뉴델리무역관",
+      "industry": "기계류,전자/전기",
+      "kind": "현장·인터뷰",
+      "states": []
+    },
+    {
+      "id": "244339",
+      "title": "인도, AI가 다시 짜는 데이터센터 지형",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244339",
+      "date": "2026-10-01",
+      "office": "콜카타무역관",
+      "industry": "전자/전기,IT",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244287",
+      "title": "2026년 인도 카르나타카 투자 환경과 체크포인트",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244287",
+      "date": "2026-10-01",
+      "office": "벵갈루루무역관",
+      "industry": "산업일반",
+      "kind": "투자진출",
+      "states": [
+        "karnataka"
+      ]
+    },
+    {
+      "id": "244127",
+      "title": "서비스 로봇, 인도의 미래를 인도하다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244127",
+      "date": "2026-10-01",
+      "office": "첸나이무역관",
+      "industry": "기계류,전자/전기,IT",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "244303",
+      "title": "2026년 네팔 화장품·퍼스널케어산업 정보",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244303",
+      "date": "2026-09-29",
+      "office": "뉴델리무역관",
+      "industry": "생활소비재",
+      "kind": "국별 주요산업",
+      "states": []
+    },
+    {
+      "id": "244245",
+      "title": "2026년 인도 방위산업 정보",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244245",
+      "date": "2026-09-29",
+      "office": "뉴델리무역관",
+      "industry": "기계류,전자/전기",
+      "kind": "국별 주요산업",
+      "states": []
+    },
+    {
+      "id": "244220",
+      "title": "2026년 인도 원자력산업 정보",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244220",
+      "date": "2026-09-23",
+      "office": "뉴델리무역관",
+      "industry": "광물/에너지,그리드(전력망·기자재)",
+      "kind": "국별 주요산업",
+      "states": []
+    },
+    {
+      "id": "243929",
+      "title": "인도, 전자·배터리 핵심 부품 관세 면제…제조 생태계 고도화",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243929",
+      "date": "2026-09-19",
+      "office": "첸나이무역관",
+      "industry": "기계류,전자/전기",
+      "kind": "통상·규제",
+      "states": []
+    },
+    {
+      "id": "244063",
+      "title": "인도 K-POP, 팬덤을 넘어 산업으로…공연·IP·현지 제작시장 열린다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=244063",
+      "date": "2026-09-17",
+      "office": "벵갈루루무역관",
+      "industry": "문화콘텐츠",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "243690",
+      "title": "인도, 2026-27 회계연도 국방예산 902억 달러로 역대 최대 편성",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243690",
+      "date": "2026-09-15",
+      "office": "콜카타무역관",
+      "industry": "기타",
+      "kind": "경제·무역",
+      "states": []
+    },
+    {
+      "id": "243683",
+      "title": "인도, 에어컨 생산기지로 급부상… 폭염 속 '글로벌 쿨링 허브'로 도약",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243683",
+      "date": "2026-09-14",
+      "office": "첸나이무역관",
+      "industry": "생활소비재,전자/전기",
+      "kind": "경제·무역",
+      "states": []
+    },
+    {
+      "id": "243932",
+      "title": "잠 못 드는 거대시장 인도, ‘꿀잠’이 새로운 소비가 되다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243932",
+      "date": "2026-09-10",
+      "office": "첸나이무역관",
+      "industry": "생활소비재,의료바이오,기타",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "243878",
+      "title": "2026년 인도 스포츠웨어·애슬레저 산업정보",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243878",
+      "date": "2026-09-09",
+      "office": "뉴델리무역관",
+      "industry": "섬유/패션,생활소비재",
+      "kind": "국별 주요산업",
+      "states": []
+    },
+    {
+      "id": "243875",
+      "title": "인도의 새 아파트는 열쇠 없이 열린다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243875",
+      "date": "2026-09-07",
+      "office": "뉴델리무역관",
+      "industry": "전자/전기,건설/인프라/플랜트",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "243873",
+      "title": "인도의 K-웨이브 소비, KOINDEX 2026 현장에서 확인",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243873",
+      "date": "2026-09-07",
+      "office": "뉴델리무역관",
+      "industry": "농림수산식품,생활소비재,건설/인프라/플랜트",
+      "kind": "현장·인터뷰",
+      "states": []
+    },
+    {
+      "id": "243737",
+      "title": "'클릭' 한 번으로 움직이는 우리집, 인도 스마트홈 시장 분석",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243737",
+      "date": "2026-09-04",
+      "office": "뭄바이무역관",
+      "industry": "IT",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "243499",
+      "title": "'잠든 사이에도 공장은 돌아간다' 인도 다크 팩토리 시장",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243499",
+      "date": "2026-08-27",
+      "office": "뭄바이무역관",
+      "industry": "기계류,기타,산업일반",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "243613",
+      "title": "발전설비 절반은 비화석, 그런데 인도의 석탄 비중은 오히려 늘었다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243613",
+      "date": "2026-08-26",
+      "office": "뉴델리무역관",
+      "industry": "광물/에너지,그리드(전력망·기자재)",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "243547",
+      "title": "2026년 인도 제약바이오산업 정보",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243547",
+      "date": "2026-08-25",
+      "office": "벵갈루루무역관",
+      "industry": "의료바이오",
+      "kind": "국별 주요산업",
+      "states": []
+    },
+    {
+      "id": "243617",
+      "title": "1인당 연 25잔, 차의 나라 인도에서 스페셜티 커피가 뜬다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243617",
+      "date": "2026-08-25",
+      "office": "뉴델리무역관",
+      "industry": "농림수산식품,기계류",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "242824",
+      "title": "인도 BIS 인증제도 개편 본격화, 2026년 한국 제조업체가 주목해야 할 변화",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242824",
+      "date": "2026-08-21",
+      "office": "뭄바이무역관",
+      "industry": "기타",
+      "kind": "통상·규제",
+      "states": []
+    },
+    {
+      "id": "243317",
+      "title": "인도-뉴질랜드 자유무역협정(FTA) 타결('26.4.27)",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243317",
+      "date": "2026-08-18",
+      "office": "뭄바이무역관",
+      "industry": "산업일반",
+      "kind": "통상·규제",
+      "states": []
+    },
+    {
+      "id": "243338",
+      "title": "'프로틴 갭'과 피트니스 인프라 확장으로 성장하는 인도 스포츠 영양식품 시장",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243338",
+      "date": "2026-08-14",
+      "office": "뉴델리무역관",
+      "industry": "농림수산식품,의료바이오",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "243337",
+      "title": "좁아진 인도의 집, 접고 쌓는 가구가 팔린다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243337",
+      "date": "2026-08-14",
+      "office": "뉴델리무역관",
+      "industry": "생활소비재,건설/인프라/플랜트",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "243165",
+      "title": "인도, S-PVC 대상 최저수입가격(MIP) 제도 도입",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243165",
+      "date": "2026-08-11",
+      "office": "뉴델리무역관",
+      "industry": "화학",
+      "kind": "통상·규제",
+      "states": []
+    },
+    {
+      "id": "243212",
+      "title": "외환 관리에 힘 쏟는 인도 정부...타개책은?",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243212",
+      "date": "2026-08-05",
+      "office": "암다바드무역관",
+      "industry": "금융",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "243209",
+      "title": "세계 최대 섬유 전시회 Bharat Tex 2026에서 확인한 인도 섬유시장 진출 기회",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=243209",
+      "date": "2026-07-31",
+      "office": "뉴델리무역관",
+      "industry": "섬유/패션",
+      "kind": "현장·인터뷰",
+      "states": []
+    },
+    {
+      "id": "242669",
+      "title": "인도, 新 FTA 통해 글로벌 공급망 허브 노린다…선진국 중심 통상전략 재편",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242669",
+      "date": "2026-07-24",
+      "office": "뉴델리무역관",
+      "industry": "기타",
+      "kind": "통상·규제",
+      "states": []
+    },
+    {
+      "id": "242638",
+      "title": "인도 K-푸드 수요 급증, 시장 진출의 첫 관문은 FSSAI",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242638",
+      "date": "2026-07-24",
+      "office": "뭄바이무역관",
+      "industry": "생활소비재",
+      "kind": "통상·규제",
+      "states": []
+    },
+    {
+      "id": "242926",
+      "title": "밀렛에서 모링가까지, 14억 인구가 키우는 인도 슈퍼푸드 시장",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242926",
+      "date": "2026-07-23",
+      "office": "첸나이무역관",
+      "industry": "생활소비재",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "242671",
+      "title": "인도 퀵커머스 시장, 10분 배송 넘어 유통산업의 새로운 표준으로 부상",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242671",
+      "date": "2026-07-14",
+      "office": "뉴델리무역관",
+      "industry": "기타",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "242618",
+      "title": "인도, 세계 4위 의료기술 시장으로 도약",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242618",
+      "date": "2026-07-10",
+      "office": "콜카타무역관",
+      "industry": "의료바이오",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "242484",
+      "title": "인도 유통시장 재편 가속화, 퀵커머스가 새로운 유통채널로 부상",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242484",
+      "date": "2026-07-10",
+      "office": "뭄바이무역관",
+      "industry": "유통/물류",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "242472",
+      "title": "인도 조선업 시장 현황 및 협력 가능성",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242472",
+      "date": "2026-07-08",
+      "office": "암다바드무역관",
+      "industry": "자동차/수송기기",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "242453",
+      "title": "인도 건설시장 공략의 장, Bharat Buildcon 2026에서 찾은 협력 기회",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242453",
+      "date": "2026-07-07",
+      "office": "뉴델리무역관",
+      "industry": "건설/인프라/플랜트",
+      "kind": "현장·인터뷰",
+      "states": []
+    },
+    {
+      "id": "242508",
+      "title": "인도 전기차 산업 공급망 변화와 시사점",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242508",
+      "date": "2026-07-06",
+      "office": "첸나이무역관",
+      "industry": "자동차/수송기기",
+      "kind": "경제·무역",
+      "states": []
+    },
+    {
+      "id": "242189",
+      "title": "아시아·태평양 '거인'들의 회담, 2026 뉴델리 쿼드(QUAD) 외교장관회의",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242189",
+      "date": "2026-06-25",
+      "office": "뭄바이무역관",
+      "industry": "산업일반",
+      "kind": "경제·무역",
+      "states": []
+    },
+    {
+      "id": "242180",
+      "title": "인도 뉴트라슈티컬 산업의 현재와 미래, Nutrify Today C-Suite Sumflex 2026 현장에서 본 시장 트렌드",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242180",
+      "date": "2026-06-18",
+      "office": "뭄바이무역관",
+      "industry": "의료바이오",
+      "kind": "현장·인터뷰",
+      "states": []
+    },
+    {
+      "id": "242142",
+      "title": "달리는 인도, 운동을 넘어 새로운 소비시장을 만들다",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242142",
+      "date": "2026-06-17",
+      "office": "첸나이무역관",
+      "industry": "생활소비재",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "242029",
+      "title": "물 부족과 도시화가 이끄는 성장, 인도 수처리 시장의 새로운 기회",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242029",
+      "date": "2026-06-09",
+      "office": "뉴델리무역관",
+      "industry": "환경",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "241938",
+      "title": "13억 소비자를 만나는 열쇠, 인도 CDSCO 화장품 인증 완전 정복",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241938",
+      "date": "2026-06-09",
+      "office": "뭄바이무역관",
+      "industry": "생활소비재",
+      "kind": "통상·규제",
+      "states": []
+    },
+    {
+      "id": "241881",
+      "title": "인도, 한국산 DOTP·DEHCH에 세이프가드 권고…CEPA 무관세 혜택 사실상 종료 위기",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241881",
+      "date": "2026-06-09",
+      "office": "뉴델리무역관",
+      "industry": "화학",
+      "kind": "통상·규제",
+      "states": []
+    },
+    {
+      "id": "242028",
+      "title": "인도 식품 가공 산업의 도약, 2030년 7000억 달러 시장을 향해",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=242028",
+      "date": "2026-06-08",
+      "office": "뉴델리무역관",
+      "industry": "농림수산식품",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "241972",
+      "title": "중동발 유가·물류 리스크, 인도 경제의 변수로 부상",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241972",
+      "date": "2026-06-08",
+      "office": "벵갈루루무역관",
+      "industry": "산업일반",
+      "kind": "경제·무역",
+      "states": []
+    },
+    {
+      "id": "241882",
+      "title": "국제유가 급등에 휘청이는 인도, 루피화 가치 연일 최저치",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241882",
+      "date": "2026-06-04",
+      "office": "뉴델리무역관",
+      "industry": "금융",
+      "kind": "경제·무역",
+      "states": []
+    },
+    {
+      "id": "241895",
+      "title": "인도, 핵심 광물 공급망 내재화 가속",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241895",
+      "date": "2026-06-02",
+      "office": "뉴델리무역관",
+      "industry": "광물/에너지",
+      "kind": "경제·무역",
+      "states": []
+    },
+    {
+      "id": "241295",
+      "title": "14억 인구 품은 인도, ‘AI for All’ 전략으로 AI 강국 도전",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241295",
+      "date": "2026-05-29",
+      "office": "뉴델리무역관",
+      "industry": "IT",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "241578",
+      "title": "인도 토종 기업, 글로벌 웨어러블 기기 ‘TOP 5’ 진입",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241578",
+      "date": "2026-05-27",
+      "office": "뭄바이무역관",
+      "industry": "생활소비재,전자/전기,IT",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "241560",
+      "title": "전 세계 우유 24% 만든다…글로벌 우유 생산 1위 인도의 낙농업 시장",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241560",
+      "date": "2026-05-26",
+      "office": "뭄바이무역관",
+      "industry": "농림수산식품",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "241396",
+      "title": "인도, 금·은 수입관세 15%로 인상…외환방어와 귀금속 수입관리 강화",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241396",
+      "date": "2026-05-21",
+      "office": "벵갈루루무역관",
+      "industry": "광물/에너지",
+      "kind": "통상·규제",
+      "states": []
+    },
+    {
+      "id": "241296",
+      "title": "인도, 디지털 공공 인프라(DPI)로 글로벌 디지털 질서 재편 주도",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241296",
+      "date": "2026-05-18",
+      "office": "뉴델리무역관",
+      "industry": "IT",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "241294",
+      "title": "인도 데이터센터 시장 급성장… 한국 기업에도 새로운 기회",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241294",
+      "date": "2026-05-18",
+      "office": "뉴델리무역관",
+      "industry": "IT",
+      "kind": "트렌드",
+      "states": []
+    },
+    {
+      "id": "241356",
+      "title": "인도 반도체, 어디까지 왔나",
+      "url": "https://dream.kotra.or.kr/user/extra/kotranews/bbs/linkView/jsp/Page.do?dataIdx=241356",
+      "date": "2026-05-18",
+      "office": "첸나이무역관",
+      "industry": "기타",
+      "kind": "경제·무역",
+      "states": []
+    }
+  ]
+}

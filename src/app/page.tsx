@@ -1,7 +1,9 @@
+import KotraNews from "@/components/KotraNews";
 import MapExplorer from "@/components/MapExplorer";
 import { loadCompassData } from "@/lib/data";
 import { buildMapData } from "@/lib/geo";
 import { loadIssues } from "@/lib/issues";
+import { loadKotra } from "@/lib/kotra";
 import { newsCounts } from "@/lib/news";
 import { buildMapPins, buildStateCards } from "@/lib/scoring";
 
@@ -22,6 +24,8 @@ export default function Home() {
         issues={loadIssues()}
         pins={buildMapPins(data)}
       />
+
+      <KotraNews store={loadKotra()} first={8} />
 
       <footer className="foot">
         <p>
