@@ -171,6 +171,50 @@ export default function MapExplorer({
 
   return (
     <>
+          <div className="search gsearch" role="search">
+            <svg className="gsearch-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+            <input
+              id="search"
+              type="search"
+              placeholder="주, 도시, 기업 이름으로 검색"
+              aria-label="주·도시·한국·미국 기업 검색"
+              autoComplete="off"
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setCursor(0);
+              }}
+              onKeyDown={onKey}
+              role="combobox"
+              aria-expanded={hits.length > 0}
+              aria-controls="search-results"
+            />
+            {query && (
+              <button type="button" className="gsearch-clear" aria-label="지우기" onClick={() => setQuery("")}>×</button>
+            )}
+            {query && (
+              <ul id="search-results" className="results-list" role="listbox">
+                {hits.length === 0 && <li className="empty">검색 결과가 없습니다</li>}
+                {hits.map((h, i) => (
+                  <li key={`${h.state.id}-${h.label}`} role="option" aria-selected={i === cursor}>
+                    <Link
+                      href={`/states/${h.state.id}`}
+                      className={i === cursor ? "active" : undefined}
+                      onMouseEnter={() => {
+                        setCursor(i);
+                        setFocusId(h.state.id);
+                      }}
+                      onMouseLeave={() => setFocusId(null)}
+                    >
+                      <b>{h.label}</b>
+                      <span>{h.sub}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
       <div className="explorer">
         <div
           className="map-wrap"
@@ -329,48 +373,6 @@ export default function MapExplorer({
         </div>
 
         <aside className="side">
-          <label className="search-label" htmlFor="search">
-            주·도시·한국·미국 기업 검색
-          </label>
-          <div className="search">
-            <input
-              id="search"
-              type="search"
-              placeholder="예: 타밀나두, 첸나이, 기아, 마이크론"
-              autoComplete="off"
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setCursor(0);
-              }}
-              onKeyDown={onKey}
-              role="combobox"
-              aria-expanded={hits.length > 0}
-              aria-controls="search-results"
-            />
-            {query && (
-              <ul id="search-results" className="results-list" role="listbox">
-                {hits.length === 0 && <li className="empty">검색 결과가 없습니다</li>}
-                {hits.map((h, i) => (
-                  <li key={`${h.state.id}-${h.label}`} role="option" aria-selected={i === cursor}>
-                    <Link
-                      href={`/states/${h.state.id}`}
-                      className={i === cursor ? "active" : undefined}
-                      onMouseEnter={() => {
-                        setCursor(i);
-                        setFocusId(h.state.id);
-                      }}
-                      onMouseLeave={() => setFocusId(null)}
-                    >
-                      <b>{h.label}</b>
-                      <span>{h.sub}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-
           <h2 className="side-title">비교 대상 8개 주</h2>
           <ul className="state-list">
             {cards.map((c) => (
